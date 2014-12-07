@@ -5,8 +5,8 @@ Gem::Specification.new do |s|
   s.version = PageDown::Rails::VERSION
   s.description = 'PageDown for the Rails asset pipeline'
   s.summary = 'This gem makes PageDown available in the Rails asset pipeline'
-  s.authors = ['Richard Hubers']
-  s.email = ['richard.hubers@gmail.com']
+  s.authors = ['Alvin Liang']
+  s.email = ['ayliang@gmail.com']
   s.date = Time.now.strftime('%Y-%m-%d')
   s.require_paths = ['lib']
   s.add_dependency('railties', '> 3.1')
