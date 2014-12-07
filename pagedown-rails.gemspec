@@ -11,6 +11,6 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib']
   s.add_dependency('railties', '> 3.1')
   s.files = Dir["{app,lib,vendor}/**/*"] + ["README.md"]
-  s.homepage = 'http://github.com/rh/pagedown-rails'
+  s.homepage = 'http://github.com/aliang/pagedown-rails'
   s.license = 'MIT'
 end
