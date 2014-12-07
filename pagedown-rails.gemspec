@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.date = Time.now.strftime('%Y-%m-%d')
   s.require_paths = ['lib']
   s.add_dependency('railties', '> 3.1')
-  s.files = Dir["{lib,vendor}/**/*"] + ["README.md"]
+  s.files = Dir["{app,lib,vendor}/**/*"] + ["README.md"]
   s.homepage = 'http://github.com/rh/pagedown-rails'
   s.license = 'MIT'
 end
