@@ -139,7 +139,9 @@
                 }
             }
 
-            uiManager = new UIManager(idPostfix, panels, undoManager, previewManager, commandManager, options.helpButton, getString);
+            uiManager = new UIManager(idPostfix, panels, undoManager, previewManager, commandManager, options.helpButton, getString, {
+              buttons: options.buttons
+            });
             uiManager.setUndoRedoButtonStates();
 
             var forceRefresh = that.refreshPreview = function () { previewManager.refresh(true); };
@@ -1214,13 +1216,13 @@
         }, 0);
     };
 
-    function UIManager(postfix, panels, undoManager, previewManager, commandManager, helpOptions, getString) {
-
+    function UIManager(postfix, panels, undoManager, previewManager, commandManager, helpOptions, getString, options) {
+        options = options || {};
         var inputBox = panels.input,
             buttons = {}; // buttons.undo, buttons.link, etc. The actual DOM elements.
 
         makeSpritedButtonRow({
-          buttons: ["bold", "italic", "spacer", "link", "quote", "code", "spacer", "olist", "ulist", "spacer", "undo", "redo"]
+          buttons: options.buttons
         });
 
         var keyEvent = "keydown";
