@@ -1468,6 +1468,7 @@
                 var spacer = document.createElement("li");
                 spacer.className = "wmd-spacer wmd-spacer" + num;
                 spacer.id = "wmd-spacer" + num + postfix;
+                spacer.style.left = xPosition + "px";
                 buttonRow.appendChild(spacer);
                 xPosition += 25;
             }
