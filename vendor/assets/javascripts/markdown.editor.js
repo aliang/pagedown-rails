@@ -1319,7 +1319,10 @@
 
         // Perform the button's action.
         function doClick(button) {
-
+            // If the button is not in the toolbar, don't execute anything
+            if (!button) {
+              return;
+            }
             inputBox.focus();
 
             if (button.textOp) {
