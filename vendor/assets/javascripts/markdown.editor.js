@@ -1219,7 +1219,9 @@
         var inputBox = panels.input,
             buttons = {}; // buttons.undo, buttons.link, etc. The actual DOM elements.
 
-        makeSpritedButtonRow({});
+        makeSpritedButtonRow({
+          buttons: ["bold", "italic", "spacer", "link", "quote", "code", "spacer", "olist", "ulist", "spacer", "undo", "redo"]
+        });
 
         var keyEvent = "keydown";
         if (uaSniffed.isOpera) {
