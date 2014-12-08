@@ -1481,7 +1481,7 @@
                   buttons.italic = makeButton("wmd-italic-button", getString("italic"), "-20px", bindCommand("doItalic"));
                   break;
                 case "spacer":
-                  makeSpacer(++spacerCount);
+                  makeSpacer(spacerCount++);
                   break;
                 case "link":
                   buttons.link = makeButton("wmd-link-button", getString("link"), "-40px", bindCommand(function (chunk, postProcessing) {
