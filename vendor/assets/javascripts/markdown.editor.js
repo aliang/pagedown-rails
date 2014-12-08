@@ -1430,13 +1430,8 @@
         }
 
         function makeSpritedButtonRow(options) {
-            var buttonsToMake = ["bold", "italic", "spacer", "link", "quote", "code", "image", "spacer", "olist", "ulist", "heading", "hr", "spacer", "undo", "redo"]
-            if (options) {
-              if (options.buttons) {
-                var buttonsToMake = options.buttons
-              }
-            }
-
+            options = options || {};
+            var buttonsToMake = options.buttons || ["bold", "italic", "spacer", "link", "quote", "code", "image", "spacer", "olist", "ulist", "heading", "hr", "spacer", "undo", "redo"];
             var buttonBar = panels.buttonBar;
 
             var normalYShift = "0px";
