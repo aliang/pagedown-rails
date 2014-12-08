@@ -1773,14 +1773,18 @@
     commandProto.doLinkOrImage = function (chunk, postProcessing, isImage) {
 
         chunk.trimWhitespace();
-        chunk.findTags(/\s*!?\[/, /\][ ]?(?:\n[ ]*)?(\[.*?\])?/);
+        // This was the old way for finding the non-inline links
+        // chunk.findTags(/\s*!?\[/, /\][ ]?(?:\n[ ]*)?(\[.*?\])?/);
+
+        chunk.findTags(/\s*!?\[/, /\]\(.*?\)/)
         var background;
 
         if (chunk.endTag.length > 1 && chunk.startTag.length > 0) {
-
+            // Is this already a link? (i.e. are we toggling off the link?)
             chunk.startTag = chunk.startTag.replace(/!?\[/, "");
             chunk.endTag = "";
-            this.addLinkDef(chunk, null);
+            // This line was for the old non-inline way
+            // this.addLinkDef(chunk, null);
 
         }
         else {
@@ -1792,7 +1796,8 @@
             chunk.startTag = chunk.endTag = "";
 
             if (/\n\n/.test(chunk.selection)) {
-                this.addLinkDef(chunk, null);
+                // If there is a double line break (i.e. a paragraph break), then no-op or remove link
+                // this.addLinkDef(chunk, null);
                 return;
             }
             var that = this;
