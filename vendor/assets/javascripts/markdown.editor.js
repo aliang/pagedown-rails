@@ -1776,7 +1776,7 @@
         // This was the old way for finding the non-inline links
         // chunk.findTags(/\s*!?\[/, /\][ ]?(?:\n[ ]*)?(\[.*?\])?/);
 
-        chunk.findTags(/\s*!?\[/, /\]\(.*?\)/)
+        chunk.findTags(/\s*!?\[/, /\]\(?.*?\)?/)
         var background;
 
         if (chunk.endTag.length > 1 && chunk.startTag.length > 0) {
