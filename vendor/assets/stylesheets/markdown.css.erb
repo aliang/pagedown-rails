@@ -45,13 +45,18 @@
     display: inline-block;
 }
 
-.wmd-prompt-background
-{
+.wmd-prompt-background {
   background-color: Black;
 }
 
-.wmd-prompt-dialog
-{
+.wmd-prompt-dialog {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  width: 400px;
+  z-index: 1001;
   border: 1px solid #999999;
   background-color: #F5F5F5;
 }
@@ -61,13 +66,32 @@
   font-family: arial, helvetica, sans-serif;
 }
 
+.wmd-prompt-question {
+  padding: 5px;
+}
+
+form.wmd-prompt-form {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  float: left;
+  text-align: center;
+}
 
 .wmd-prompt-dialog > form > input[type="text"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
   border: 1px solid #999999;
   color: black;
 }
 
-.wmd-prompt-dialog > form > input[type="button"]{
+.wmd-prompt-dialog > form > input[type="button"] {
+  display: inline;
+  margin: 10px;
+  width: 7em;
   border: 1px solid #888888;
   font-family: trebuchet MS, helvetica, sans-serif;
   font-size: 0.8em;
